@@ -26,6 +26,7 @@ main {
   justify-content: center;
   align-items: center;
   background-color: #2d82b7;
+  flex-direction: column;
 }
 
 h1 {
@@ -112,16 +113,20 @@ Main
   background-color: lightgray;
 }
 
+/* Come visto in aula aggiungiamo anche altezza box */
 .square.facile {
   width: calc(100% / 10);
+  height: calc(100% / 10);
 }
 
 .square.normale {
   width: calc(100% / 9);
+  height: calc(100% / 9);
 }
 
 .square.difficile {
   width: calc(100% / 7);
+  height: calc(100% / 7);
 }
 
 /*
