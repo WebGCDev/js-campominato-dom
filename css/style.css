@@ -4,6 +4,10 @@ Reset
 ******
 */
 
+.bomb {
+  background-color: red;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -72,7 +76,9 @@ Body
 Header
 ******
 */
-
+label {
+  color: white;
+}
 .container-header {
   margin: 0 auto;
   width: 80%;
