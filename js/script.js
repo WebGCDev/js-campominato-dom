@@ -6,14 +6,16 @@ let counterPoints = 0;
 let endCondition = false;
 
 reset();
-
+console.log(numberBlackList);
 //Semplifico la funzione
-function init(stage, n){
+function init(stage, n) {
   for (let i = 1; i <= n; i++) {
-    let square = genSquare(getRandomNumber(1, n));
-   square.classList.add(stage)  
-      container.append(square);
-      }  
+    let square = genSquare(uniqueRandomNumber(1, n));
+    square.classList.add(stage);
+    container.append(square);
+  }
+  console.log(numberBlackList);
+}
 
 //Bottore Start & Select Level
 function genBtnStart() {
@@ -23,6 +25,7 @@ function genBtnStart() {
 
   btn.addEventListener('click', function () {
     container.innerHTML = '';
+    numberBlackList = [];
     if (chooseLevel.value === 'facile') {
       init('facile', 100);
     } else if (chooseLevel.value === 'normale') {
@@ -39,25 +42,25 @@ function genSquare(index) {
   const newSquare = document.createElement('div');
   newSquare.className = 'square';
   newSquare.id = index;
-  newSquare.addEventListener('click',clickedCheck)
+  newSquare.addEventListener('click', clickedCheck);
   return newSquare;
 }
 
 //Funzione che mi permetta di cliccare sul quadrato
-function clickedCheck(){
-  if(this.id <= 15 ){
-    this.classList.add('bomb')
+function clickedCheck() {
+  if (this.id <= 16) {
+    //Fix <=16 bombe
+    this.classList.add('bomb');
     console.log(this.id);
     return lose;
-  }else{
-    this.classList.add('checked')
-    this.removeEventListener('click',clickedCheck)
+  } else {
+    this.classList.add('checked');
+    this.removeEventListener('click', clickedCheck);
     counterPoints++;
     console.log(counterPoints);
     console.log(this.id);
   }
 }
-
 
 // Funzione per generare un numero casuale univoco
 function uniqueRandomNumber(min, max) {
@@ -82,5 +85,7 @@ function getRandomNumber(min, max) {
 
 function reset() {
   container.innerHTML = '';
+  numberBlackList = [];
+  counterPoints = 0;
   choiceLevel.append(genBtnStart());
 }
