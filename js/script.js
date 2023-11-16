@@ -24,10 +24,10 @@ function genBtnStart() {
   btn.innerHTML = 'Start';
 
   btn.addEventListener('click', function () {
-    container.innerHTML = '';
-    numberBlackList = [];
+    clear();
     if (chooseLevel.value === 'facile') {
       init('facile', 100);
+      win(100, 16);
     } else if (chooseLevel.value === 'normale') {
       init('normale', 81);
     } else if (chooseLevel.value === 'difficile') {
@@ -52,7 +52,6 @@ function clickedCheck() {
     //Fix <=16 bombe
     this.classList.add('bomb');
     console.log(this.id);
-    return lose;
   } else {
     this.classList.add('checked');
     this.removeEventListener('click', clickedCheck);
@@ -60,6 +59,7 @@ function clickedCheck() {
     console.log(counterPoints);
     console.log(this.id);
   }
+  win(numberBlackList.length, 16);
 }
 
 // Funzione per generare un numero casuale univoco
@@ -81,11 +81,22 @@ function getRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-// Reset della funzione
-
-function reset() {
+//Funzione con condizione per vincere la partita
+function win(n, bomb) {
+  if (counterPoints === n - bomb) {
+    console.log('HAI VINTO');
+  }
+}
+// Reset tutti i parametri clear
+function clear() {
   container.innerHTML = '';
   numberBlackList = [];
   counterPoints = 0;
+}
+
+// Reset della funzione
+
+function reset() {
+  clear();
   choiceLevel.append(genBtnStart());
 }
