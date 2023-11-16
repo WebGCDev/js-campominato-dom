@@ -1,0 +1,125 @@
+/*
+******
+Reset
+******
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header,
+footer {
+  height: 100px;
+  background-color: #07004d;
+}
+
+main {
+  height: calc(100vh - 140px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2d82b7;
+}
+
+h1 {
+  color: white;
+}
+
+h5 {
+  padding: 40px;
+  color: white;
+  text-align: center;
+}
+
+/*
+******
+Css Colors
+******
+*/
+
+:root {
+}
+
+/*
+******
+Typography
+******
+*/
+
+/*
+******
+Debug
+******
+*/
+
+/*
+******
+Common
+******
+*/
+
+/*
+******
+Body
+******
+*/
+
+/*
+******
+Header
+******
+*/
+
+.container-header {
+  margin: 0 auto;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*
+******
+Main
+******
+*/
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 500px;
+  height: 500px;
+}
+
+.square {
+  /* width: calc(100% / 10); Non serve più avendo creato regole per livelli */
+  border: 2px solid #272343;
+  background-color: #ff5470;
+  cursor: pointer;
+}
+
+.square.checked {
+  background-color: lightgray;
+}
+
+.square.facile {
+  width: calc(100% / 10);
+}
+
+.square.normale {
+  width: calc(100% / 9);
+}
+
+.square.difficile {
+  width: calc(100% / 7);
+}
+
+/*
+******
+Footer
+******
+*/
