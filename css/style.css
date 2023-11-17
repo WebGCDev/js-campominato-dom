@@ -12,11 +12,12 @@ Reset
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 header,
 footer {
-  height: 100px;
+  height: 70px;
   background-color: #07004d;
 }
 
@@ -33,10 +34,14 @@ h1 {
   color: white;
 }
 
-h5 {
-  padding: 40px;
+h2 {
+  padding: 25px;
   color: white;
   text-align: center;
+}
+
+#output {
+  margin-top: 40px;
 }
 
 /*
@@ -44,9 +49,6 @@ h5 {
 Css Colors
 ******
 */
-
-:root {
-}
 
 /*
 ******
@@ -59,6 +61,18 @@ Typography
 Debug
 ******
 */
+
+.btn-play {
+  cursor: pointer;
+  padding: 8px 15px;
+  border-radius: 10px;
+  color: white;
+  background-color: lightseagreen;
+}
+
+.freeze {
+  background-color: black;
+}
 
 /*
 ******
